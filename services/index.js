@@ -28,6 +28,7 @@ export const getPosts = async () => {
               name
               slug
             }
+            browserUrl
           }
         }
       }
@@ -79,6 +80,7 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
+        browserUrl
       }
     }
   `

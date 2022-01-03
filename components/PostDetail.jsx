@@ -102,7 +102,20 @@ const PostDetail = ({ post }) => {
             </span>
           </div>
         </div>
+
         <h1 className='mb-8 text-3xl font-semibold'>{post.title}</h1>
+
+        <div>
+          {post.browserUrl && (
+            //<Link href={post.browserUrl}>Browse Live</Link>
+            <a target='_blank' href={post.browserUrl} rel='noopener noreferrer'>
+              <span className='transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 mb-4 text-lg font-medium rounded-full text-white px-3 py-1 cursor-pointer'>
+                Browse Live!
+              </span>
+            </a>
+          )}
+        </div>
+
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemindex) =>
             getContentFragment(itemindex, item.text, item)
